@@ -27,11 +27,11 @@ namespace Formularios_Juntos
         {
             if (!(Duplicado(ls_agregados) || Duplicado(ls_pasados)))
                 if (txtNombre.Text.Equals(""))
-                    MessageBox.Show("El Nombre esta Vacío","Alerta", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("El Nombre esta Vacío","Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 else
                     ls_agregados.Items.Add(txtNombre.Text);
             else
-                MessageBox.Show("El Nombre ya Existe", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("El Nombre ya Existe", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             txtNombre.Text = "";
         }
         private void button1_Click(object sender, EventArgs e)
@@ -47,7 +47,7 @@ namespace Formularios_Juntos
                 ls_agregados.Items.Remove(ls_agregados.SelectedItem);
             }
             else
-                MessageBox.Show("No hay nada seleccionado", "Error");
+                MessageBox.Show("No hay nada seleccionado", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
         }
 
@@ -60,7 +60,7 @@ namespace Formularios_Juntos
             }
             else
 
-                MessageBox.Show("No hay items", "Atención!");
+                MessageBox.Show("No hay items", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
         private void Btn_agregar(object sender, EventArgs e)
         {

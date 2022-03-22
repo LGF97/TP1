@@ -31,12 +31,12 @@ namespace Formularios_Juntos
             }
             if (!duplicado)
             {
-                if (txtNombre.Text.Equals(""))
-                    MessageBox.Show("El Nombre esta vacio", "Atención!");
+                if (txtNombre.Text.Equals("") && txtApellido.Text.Equals(""))
+                     MessageBox.Show("El Nombre y el Apellido estan vacios", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                else if (txtNombre.Text.Equals(""))
+                    MessageBox.Show("El Nombre esta vacio", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 else if (txtApellido.Text.Equals(""))
-                    MessageBox.Show("El Apellido esta vacio", "Atención!");
-                else if (txtNombre.Text.Equals("") && txtApellido.Text.Equals(""))
-                    MessageBox.Show("El Nombre esta y el Apellido estan vacios", "Atención!");
+                    MessageBox.Show("El Apellido esta vacio", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 else
                 {
                     lsBox.Items.Add(txtNombre.Text + " " + txtApellido.Text);
@@ -44,7 +44,7 @@ namespace Formularios_Juntos
                     txtApellido.Text = "";
                     ///Ordenamiento
                     List<string> lsString = new List<string>();///Creamos una lista de Strings
-
+              
                     foreach (var obj in lsBox.Items)///cargamos a la nueva lista la lista a ordenar
                         lsString.Add(obj.ToString());
 
@@ -58,7 +58,7 @@ namespace Formularios_Juntos
             }
             else
             {
-                MessageBox.Show("Ya existe la persona a agregar", "Error");
+                MessageBox.Show("Ya existe la persona a agregar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtNombre.Text = "";
                 txtApellido.Text = "";
             }
