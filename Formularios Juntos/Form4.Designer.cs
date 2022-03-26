@@ -149,23 +149,21 @@ namespace Formularios_Juntos
             this.lbl_elem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(110)))));
             this.lbl_elem.Location = new System.Drawing.Point(102, 357);
             this.lbl_elem.Name = "lbl_elem";
-            this.lbl_elem.Size = new System.Drawing.Size(62, 18);
+            this.lbl_elem.Size = new System.Drawing.Size(0, 18);
             this.lbl_elem.TabIndex = 6;
-            this.lbl_elem.Text = "Nombre";
-            this.lbl_elem.Visible = false;
             // 
             // btn_Agregar
             // 
             this.btn_Agregar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(29)))), ((int)(((byte)(40)))));
             this.btn_Agregar.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btn_Agregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Agregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Agregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Agregar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(3)))), ((int)(((byte)(31)))));
             this.btn_Agregar.Location = new System.Drawing.Point(107, 148);
             this.btn_Agregar.Name = "btn_Agregar";
             this.btn_Agregar.Size = new System.Drawing.Size(312, 47);
             this.btn_Agregar.TabIndex = 0;
-            this.btn_Agregar.Text = "Agregar";
+            this.btn_Agregar.Text = "Mostrar lo que selecciono";
             this.btn_Agregar.UseVisualStyleBackColor = false;
             this.btn_Agregar.Click += new System.EventHandler(this.button1_Click);
             // 

@@ -76,6 +76,7 @@ namespace Formularios_Juntos
             // 
             // panel6
             // 
+            this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(29)))), ((int)(((byte)(50)))));
             this.panel6.Controls.Add(this.label2);
             this.panel6.Controls.Add(this.label7);
             this.panel6.Controls.Add(this.label3);
@@ -84,7 +85,7 @@ namespace Formularios_Juntos
             this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel6.Location = new System.Drawing.Point(0, 329);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(199, 146);
+            this.panel6.Size = new System.Drawing.Size(199, 106);
             this.panel6.TabIndex = 10;
             // 
             // label2
