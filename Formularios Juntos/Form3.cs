@@ -17,7 +17,10 @@ namespace Formularios_Juntos
             InitializeComponent();
         }
 
-
+        private bool pulsaTeclas(KeyPressEventArgs e)
+        {
+            return (e.KeyChar >= 65 && e.KeyChar <= 90 || e.KeyChar >= 97 && e.KeyChar <= 122 || e.KeyChar == 8);
+        }
         private void button1_Click(object sender, EventArgs e)
         {
             bool duplicado = false;
@@ -42,7 +45,7 @@ namespace Formularios_Juntos
                     lsBox.Items.Add(txtNombre.Text + " " + txtApellido.Text);
                     txtNombre.Text = "";
                     txtApellido.Text = "";
-                    ///Ordenamiento
+                    ///Ordenamiento se podria hacer por la propiedad pero me olvide jaja
                     List<string> lsString = new List<string>();///Creamos una lista de Strings
               
                     foreach (var obj in lsBox.Items)///cargamos a la nueva lista la lista a ordenar
@@ -70,23 +73,22 @@ namespace Formularios_Juntos
 
         private void txtNombre_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!(e.KeyChar >= 65 && e.KeyChar <= 90 || e.KeyChar >= 97 && e.KeyChar <= 122 || e.KeyChar == 8))
-            {
+            if (!pulsaTeclas(e))
                 e.Handled = true;
-            }
         }
 
         private void btn_borrar_Click(object sender, EventArgs e)
         {
-            lsBox.Items.Clear();
-        }
+            if (lsBox.SelectedItem != null)
+                lsBox.Items.Remove(lsBox.SelectedItem);
+            else
+                MessageBox.Show("No hay nada seleccionado", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+    }
 
         private void txtApellido_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!(e.KeyChar >= 65 && e.KeyChar <= 90 || e.KeyChar >= 97 && e.KeyChar <= 122 || e.KeyChar == 8))
-            {
+            if (!pulsaTeclas(e))
                 e.Handled = true;
-            }
         }
     }
 }

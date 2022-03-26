@@ -23,7 +23,7 @@ namespace Formularios_Juntos
                     return true;
             return false;
         }
-        void AgregarPersona()
+        private void AgregarPersona()
         {
             if (!(Duplicado(ls_agregados) || Duplicado(ls_pasados)))
                 if (txtNombre.Text.Equals(""))
@@ -34,11 +34,8 @@ namespace Formularios_Juntos
                 MessageBox.Show("El Nombre ya Existe", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             txtNombre.Text = "";
         }
-        private void button1_Click(object sender, EventArgs e)
-        {
-            AgregarPersona();
-        }
-
+        private void btn_agregarClick(object sender, EventArgs e)
+        {AgregarPersona();}
         private void btn_pasar_Click(object sender, EventArgs e)
         {
             if (ls_agregados.SelectedItem != null)
@@ -47,10 +44,7 @@ namespace Formularios_Juntos
                 ls_agregados.Items.Remove(ls_agregados.SelectedItem);
             }
             else
-                MessageBox.Show("No hay nada seleccionado", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
-        }
-
+                MessageBox.Show("No hay nada seleccionado", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);}
         private void btn_agregarAll_Click(object sender, EventArgs e)
         {
             if (ls_agregados.Items.Count > 0)
@@ -62,16 +56,13 @@ namespace Formularios_Juntos
 
                 MessageBox.Show("No hay items", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
-        private void Btn_agregar(object sender, EventArgs e)
-        {
-            AgregarPersona();
-        }
-
         private void txtNombre_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!(e.KeyChar >= 65 && e.KeyChar <= 90 || e.KeyChar >= 97 && e.KeyChar <= 122 || e.KeyChar == 8))
                 e.Handled = true;
-               
+            if (e.KeyChar == 13)//Tecla Enter
+                AgregarPersona();
         }
+           
     }
 }
